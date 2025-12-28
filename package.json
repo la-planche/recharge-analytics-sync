@@ -1,0 +1,13 @@
+{
+  "name": "recharge-analytics-sync",
+  "version": "1.0.0",
+  "description": "Sync Recharge subscription data to Supabase for analytics",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "node-fetch": "^3.3.2"
+  }
+}
