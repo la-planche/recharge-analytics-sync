@@ -45,7 +45,15 @@ function transformChargeToEvents(charge) {
           status: charge.status,
           event_type: 'charge_update',
           created_at: charge.created_at,
-          updated_at: charge.updated_at
+          updated_at: charge.updated_at,
+          // Nouveaux champs pour tracker les changements de produit
+          previous_product_id: lineItem.previous_product_id || null,
+          current_product_id: lineItem.shopify_product_id ? String(lineItem.shopify_product_id) : null,
+          previous_variant_id: lineItem.previous_variant_id || null,
+          current_variant_id: lineItem.shopify_variant_id ? String(lineItem.shopify_variant_id) : null,
+          effective_date: charge.scheduled_at,
+          previous_quantity: lineItem.previous_quantity || null,
+          current_quantity: lineItem.quantity || null
         });
       }
     }
